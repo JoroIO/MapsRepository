@@ -125,10 +125,10 @@ namespace WeeplaceMAPS
                 }
             }
 
-            return GetRanks(distinctLocs, betas)[position, 1];
+            return GetCategoryRanks(distinctLocs, betas)[position, 1];
         }
 
-        public static double[,] GetRanks(List<CheckIn> distinctLocs, double[] betas)
+        public static double[,] GetCategoryRanks(List<CheckIn> distinctLocs, double[] betas)
         {
             double[,] ranks = new double[distinctLocs.Count, 2];
             for (int i = 0; i < ranks.Length; i++)
@@ -182,29 +182,89 @@ namespace WeeplaceMAPS
         //Calculate the distance sensitive rank
         public static double DistanceSensitiveFactor(List<CheckIn> checkInInfo, string placeId, DateTime t1, DateTime t2)
         {
-            var vu = (double)VisitsByUsers(checkInInfo, placeId, t1, t2);
-            var vud = (double)VisitsByUsersAndDistance(checkInInfo, placeId, t1, t2);
+            var vu = VisitsByUsers(checkInInfo, placeId, t1, t2);
+            var vud = VisitsByUsersAndDistance(checkInInfo, placeId, t1, t2);
 
-            if (vud.Equals(0.0))
+            if (vud == 0)
             {
-                return 0;
+                vud = 1;
             }
 
-            var vul = (double)VisitsByUsersAndLocation(checkInInfo, t1, t2);
+            var vul = VisitsByUsersAndLocation(checkInInfo, t1, t2);
 
-            if (vul.Equals(0))
+            if (vul == 0)
             {
-                return 0;
+                vul = 1;
             }
 
-            var theta = sigmaOne * (vu / vud) + sigmaTwo * (vud / vul);
+            var theta = sigmaOne * ((double)vu / (double)vud) + sigmaTwo * ((double)vud / (double)vul);
 
             return theta;
         }
 
         public static double FindDistanceRank(List<CheckIn> checkInInfo, string placeId, DateTime t1, DateTime t2)
         {
-            return 0.0;
+            var error = 0.001;
+            var checkIn = checkInInfo.First(c => c.PlaceId.Equals(placeId));
+            var latitude = checkIn.Latitude;
+            var longitude = checkIn.Longitude;
+            var locationsDist = checkInInfo.Where(c => GeoCodeCalc.CalcDistance(latitude, longitude,
+                                            c.Latitude, c.Longitude, GeoCodeCalcMeasurement.Kilometers) < thrDist &&
+                                        c.DateTime >= t1 &&
+                                        c.DateTime <= t2).ToList();
+
+            List<CheckIn> distinctLocs = locationsDist.GroupBy(c => c.PlaceId).Select(c => c.First()).ToList();
+
+            double[] thetas = new double[distinctLocs.Count];
+            int position = 0;
+            for (int i = 0; i < distinctLocs.Count; i++)
+            {
+                thetas[i] = DistanceSensitiveFactor(checkInInfo, distinctLocs[i].PlaceId, t1, t2);
+                if (distinctLocs[i].PlaceId.Equals(placeId))
+                {
+                    position = i;
+                }
+            }
+
+            return GetDistanceRanks(distinctLocs, thetas)[position, 1];
+        }
+
+        public static double[,] GetDistanceRanks(List<CheckIn> distinctLocs, double[] thetas)
+        {
+            double[,] ranks = new double[distinctLocs.Count, 2];
+            for (int i = 0; i < ranks.Length; i++)
+            {
+                ranks[i, 0] = 1.0;
+                ranks[i, 1] = 1.0;
+            }
+
+            bool hasBigger = false;
+            do
+            {
+                for (int i = 0; i < distinctLocs.Count; i++)
+                {
+                    ranks[i, 1] = alpha * thetas[i] + (1 - alpha) * Sum(ranks, i);
+                }
+
+                hasBigger = false;
+                for (int i = 0; i < distinctLocs.Count; i++)
+                {
+                    if (Math.Abs(ranks[i, 0] - ranks[i, 1]) >= 0.01)
+                    {
+                        hasBigger = true;
+                    }
+                    ranks[i, 0] = ranks[i, 1];
+                }
+
+                for (int k = 0; k < ranks.GetLength(0); k++)
+                {
+                    Console.Write(String.Format("{0:0.000}   ", ranks[k, 1]));
+                }
+
+                Console.WriteLine();
+            } while (hasBigger);
+
+            return ranks;
         }
 
         public static double FindUnifiedRank(List<CheckIn> checkInInfo, string placeId, DateTime t1, DateTime t2,
@@ -227,10 +287,20 @@ namespace WeeplaceMAPS
             var n = checkInInfo.Count(c => c.UserId.Equals(userId));
             var N = checkInInfo.Select(c => c.PlaceId).Distinct().Count();
 
-            var tempList = checkInInfo.Where(c => c.UserId.Equals(userId) &&
-                                            GeoCodeCalc.CalcDistance(latitude, longitude,
+            var locsByUser = checkInInfo.Where(c => c.UserId.Equals(userId));
+            List<CheckIn> distinctLocs = locsByUser.GroupBy(c => c.PlaceId).Select(c => c.First()).ToList();
+
+            var Nd = 0;
+            foreach (var loc in distinctLocs)
+            {
+                Nd += checkInInfo.Count(c => GeoCodeCalc.CalcDistance(loc.Latitude, loc.Longitude,
                                             c.Latitude, c.Longitude, GeoCodeCalcMeasurement.Kilometers) < thrDist);
-            var Nd = tempList.Select(c => c.PlaceId).Distinct().Count();
+            }
+
+            if (Nd == 0)
+            {
+                Nd = 1;
+            }
 
             return (nD / n) * (Math.Log(1 + N/Nd));
         }
@@ -272,7 +342,7 @@ namespace WeeplaceMAPS
 
             var checkInInfo = new List<CheckIn>();
 
-            StreamReader csvreader = new StreamReader(@"D:\Материали\Препоръчващи системи\Филтрирани теми за проекти\weeplaces\weeplace_checkins.csv");
+            StreamReader csvreader = new StreamReader(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + @"\weeplaces\weeplace_checkins.csv");
             string inputLine = "";
             var count = 0;
             var popularCategories = new Dictionary<string, int>();
@@ -353,7 +423,7 @@ namespace WeeplaceMAPS
             //var lessPopularCategories = popularCategories.Where(x => x.Value == 3);
 
             // Calculate Distance in Kilometers
-            GeoCodeCalc.CalcDistance(47.8131545175277, -122.783203125, 42.0982224111897, -87.890625, GeoCodeCalcMeasurement.Kilometers);
+            //Console.WriteLine(GeoCodeCalc.CalcDistance(40.726144, -74.008348, 40.733075, -73.991478, GeoCodeCalcMeasurement.Kilometers));
 
             stopwatch.Stop();
             var elapsedTime = stopwatch.ElapsedMilliseconds;

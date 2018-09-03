@@ -5,3 +5,10 @@ C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\Weep
 C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.exe
 C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.pdb
 C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.exe.config
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.exe
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.pdb
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.exe
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.pdb
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.csprojResolveAssemblyReference.cache
