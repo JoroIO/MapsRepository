@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.exe.config
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.exe
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.pdb
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.exe
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.pdb

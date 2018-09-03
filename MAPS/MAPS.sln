@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPS", "MAPS\MAPS.csproj", "{562CB309-DAB0-4B34-820B-05C3F573D8B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GowalaMAPS", "GowalaMAPS\GowalaMAPS.csproj", "{88EC2FB4-ED43-4B0C-B9BD-6AE25B4254DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeeplaceMAPS", "WeeplaceMAPS\WeeplaceMAPS.csproj", "{22FFC63B-4796-4966-AB2C-9F9FA2A28573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplicationIterative", "TestApplicationIterative\TestApplicationIterative.csproj", "{2E195C62-DBAC-4805-9F3F-FCAAC50553B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{562CB309-DAB0-4B34-820B-05C3F573D8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562CB309-DAB0-4B34-820B-05C3F573D8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562CB309-DAB0-4B34-820B-05C3F573D8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562CB309-DAB0-4B34-820B-05C3F573D8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88EC2FB4-ED43-4B0C-B9BD-6AE25B4254DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EC2FB4-ED43-4B0C-B9BD-6AE25B4254DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EC2FB4-ED43-4B0C-B9BD-6AE25B4254DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EC2FB4-ED43-4B0C-B9BD-6AE25B4254DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22FFC63B-4796-4966-AB2C-9F9FA2A28573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FFC63B-4796-4966-AB2C-9F9FA2A28573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FFC63B-4796-4966-AB2C-9F9FA2A28573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FFC63B-4796-4966-AB2C-9F9FA2A28573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E195C62-DBAC-4805-9F3F-FCAAC50553B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E195C62-DBAC-4805-9F3F-FCAAC50553B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E195C62-DBAC-4805-9F3F-FCAAC50553B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E195C62-DBAC-4805-9F3F-FCAAC50553B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

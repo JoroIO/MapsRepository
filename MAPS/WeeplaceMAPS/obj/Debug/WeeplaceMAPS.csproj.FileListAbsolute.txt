@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.exe.config
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.exe
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\bin\Debug\WeeplaceMAPS.pdb
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.exe
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\obj\Debug\WeeplaceMAPS.pdb
+C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\WeeplaceMAPS\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
