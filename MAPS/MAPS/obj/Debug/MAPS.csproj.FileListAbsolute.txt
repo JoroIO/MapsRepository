@@ -1,1 +1,7 @@
 C:\Users\User\Source\Repos\HackFMI_Big_Bad_Wolf\MAPS\MAPS\bin\Debug\MAPS.exe.config
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\bin\Debug\MAPS.exe.config
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\bin\Debug\MAPS.exe
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\bin\Debug\MAPS.pdb
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\obj\Debug\MAPS.csprojResolveAssemblyReference.cache
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\obj\Debug\MAPS.exe
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\MAPS\obj\Debug\MAPS.pdb

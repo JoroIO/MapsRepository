@@ -7,3 +7,6 @@ C:\Users\User\source\repos\HackFMI_Big_Bad_Wolf\MAPS\TestApplicationIterative\ob
 D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.exe.config
 D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.exe
 D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.pdb
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.exe
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\bin\Debug\TestApplicationIterative.pdb
+D:\Материали\Препоръчващи системи\ПРОЕКТ\MapsRepository\MAPS\TestApplicationIterative\obj\Debug\TestApplicationIterative.csprojResolveAssemblyReference.cache
